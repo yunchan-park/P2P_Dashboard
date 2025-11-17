@@ -7,3 +7,4 @@ __pycache__/
 
 # Binaries
 chromedriver
+\n# Large data files\nModeling/Auction/Data_Madang/sales_data_combined.csv\nModeling/Auction/Data_Madang/auction_data_combined.csv

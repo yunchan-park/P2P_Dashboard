@@ -11,12 +11,11 @@ data_dir = os.path.dirname(os.path.abspath(__file__))
 sales_file = os.path.join(data_dir, 'sales_data_combined.csv')
 auction_file = os.path.join(data_dir, 'auction_data_combined.csv')
 si_code_file = os.path.join(data_dir, 'si_code.csv')
-output_file = os.path.join(data_dir, 'auction_preprocessed.csv') # 최종 파일 이름 변경
+output_file = os.path.join(data_dir, 'auction_preprocessed.csv')
 
 # --- 1. 조회 딕셔너리 생성 함수들 ---
 
 def create_road_address_lookup(sales_df):
-    """도로명 주소용 조회 딕셔너리를 생성합니다. (충돌 시 평균값 올림 / 최빈값 처리)"""
     print("도로명 주소용 조회 딕셔너리를 생성합니다...")
     
     lookup_df = sales_df.dropna(subset=['도로명', '건축년도', '시군구', '본번', '부번']).copy()
@@ -51,8 +50,8 @@ def create_road_address_lookup(sales_df):
     return final_lookup
 
 def create_lot_address_lookup(sales_df):
-    """지번 주소용 조회 딕셔너리를 생성합니다."""
     print("지번 주소용 조회 딕셔너리를 생성합니다...")
+    
     lookup_df = sales_df.dropna(subset=['시군구', '번지', '건축년도', '본번', '부번']).copy()
     
     grouped = lookup_df.groupby(['시군구', '번지']).agg({

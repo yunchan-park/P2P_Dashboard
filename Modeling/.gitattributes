@@ -1,3 +1,0 @@
-Auction/Data/sales_data_combined.csv filter=lfs diff=lfs merge=lfs -text
-Auction/Data/*.csv filter=lfs diff=lfs merge=lfs -text
-Auction/Data/*.xlsx filter=lfs diff=lfs merge=lfs -text
